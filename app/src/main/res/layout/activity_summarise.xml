@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/summarizeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Summarize"
+                android:background="@android:color/holo_blue_light"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/paraphraseButton"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/paraphraseButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Paraphrase"
+                android:background="@android:color/holo_green_light"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/summarizeButton"
+                app:layout_constraintEnd_toStartOf="@id/qaButton"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/qaButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="QandA"
+                android:background="@android:color/holo_orange_light"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/paraphraseButton"
+                app:layout_constraintEnd_toStartOf="@id/expandButton"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/expandButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Expand"
+                android:background="@android:color/holo_red_light"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/qaButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/outputTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Result will appear here"
+                app:layout_constraintTop_toBottomOf="@id/summarizeButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/promptEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter text to summarize"
+                android:maxLines="20"
+                android:inputType="textMultiLine"
+                android:lines="20"
+                app:layout_constraintTop_toBottomOf="@id/outputTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp" />
+            <Button
+                android:id="@+id/idBtnExtract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Extract Text from PDF"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toBottomOf="@id/outputTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                android:layout_marginTop="16dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
